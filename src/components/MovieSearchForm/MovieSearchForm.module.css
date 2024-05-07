@@ -1,0 +1,14 @@
+.form {
+  margin-top: 10px;
+  display: inline-flex;
+  justify-content: center;
+  gap: 10px;
+}
+.input {
+  font: inherit;
+  font-size: 20px;
+  border: 1px solid #1a2c5b;
+  border-radius: 5px;
+  outline: none;
+  padding: 8px;
+}

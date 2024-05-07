@@ -1,34 +1,38 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://api.themoviedb.org/3';
-axios.defaults.headers.common['Authorization'] = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZmE1NTliMDA5ZTlmMWE2OGM3Y2RiY2ZkM2NlODMwMyIsInN1YiI6IjY2MzI2YjdiOTlkNWMzMDEyNjU2MzAzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.taSDIvrivKnLbLDS5d2ihnNahdT9d01bvjPxlcaVsdI';
-
-async function getData(endpoint) {
-  try {
-    const response = await axios.get(endpoint);
-    return response.data;
-  } catch (error) {
-    console.error('An error occurred:', error.message);
-    throw error; 
-  }
-}
+const options = {
+  headers: {
+    Authorization:
+      'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZmE1NTliMDA5ZTlmMWE2OGM3Y2RiY2ZkM2NlODMwMyIsInN1YiI6IjY2MzI2YjdiOTlkNWMzMDEyNjU2MzAzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.taSDIvrivKnLbLDS5d2ihnNahdT9d01bvjPxlcaVsdI',
+  },
+};
 
 export async function getTrendingMovies() {
-  return await getData('/trending/movie/day');
+  const url = 'https://api.themoviedb.org/3/trending/movie/day';
+  const response = await axios.get(url, options);
+  return response.data.results;
 }
 
 export async function searchMovies(query) {
-  return await getData(`/search/movie?query=${query}`);
+  const url = `https://api.themoviedb.org/3/search/movie?query=${query}`;
+  const response = await axios.get(url, options);
+  return response.data.results;
 }
 
 export async function getMovieData(movieId) {
-  return await getData(`/movie/${movieId}`);
+  const url = `https://api.themoviedb.org/3/movie/${movieId}`;
+  const response = await axios.get(url, options);
+  return response.data;
 }
 
 export async function getMovieCredits(movieId) {
-  return await getData(`/movie/${movieId}/credits`);
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits`;
+  const response = await axios.get(url, options);
+  return response.data.cast;
 }
 
 export async function getMovieReviews(movieId) {
-  return await getData(`/movie/${movieId}/reviews`);
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/reviews`;
+  const response = await axios.get(url, options);
+  return response.data.results;
 }

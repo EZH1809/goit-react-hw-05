@@ -3,11 +3,11 @@ import css from './Navigation.module.css';
 import clsx from "clsx";
 
 const getNavLinkClass = ({ isActive }) => {
-    return clsx(css.headerNav, isActive && css.active);
+    return clsx(css.navLink, isActive && css.active);
 };
 export default function Navigation() {
   return (
-    <nav>
+    <nav className={css.header}>
       <NavLink to="/" className={getNavLinkClass}>
         Home
       </NavLink>

@@ -1,6 +1,8 @@
 .card {
-  width: 200px;
-  margin-bottom: 8px;
+  background-size: contain;
+}
+img {
+  height: 390px;
 }
 
 .title {

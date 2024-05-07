@@ -11,12 +11,14 @@ export default function MoviesPage() {
   const [query, setQuery] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
 
+  const movieParam = searchParams.get('query') ?? '';
+  
   useEffect(() => {
     async function fetchMovies() {
       try {
         setError(false);
         setLoading(true);
-        const movieParam = searchParams.get('query') ?? '';
+
         const data = await searchMovies(movieParam);
         setMovies(data);
       } catch (error) {
@@ -26,7 +28,7 @@ export default function MoviesPage() {
       }
     }
     fetchMovies();
-  }, [searchParams]);
+  }, [searchParams,query]);
 
   const handleSearchMovie = newMovie => {
     setSearchParams({ query: newMovie });

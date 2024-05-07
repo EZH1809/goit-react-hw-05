@@ -1,19 +1,22 @@
-.headerNav {
-
+.navLink {
   display: inline-flex;
-
   padding: 8px;
   margin: 8px;
   text-decoration: none;
-  background-color: #1a2c5b; 
-  color: #fff; 
+  background-color: #1a2c5b;
+  color: #fff;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
-.headerNav:hover {
-  color: #FF9400;
+.navLink:hover {
+  color: #ff9400;
 }
-.active{
-  background-color: #CECCF4;
+
+.header {
+  border-bottom: 1px solid #1a2c5b;
+  box-shadow: 0 4px 8px rgba(46, 23, 177, 0.3);
+}
+.active {
+  background-color: #ceccf4;
   color: aliceblue;
 }
-

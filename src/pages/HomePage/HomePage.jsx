@@ -13,7 +13,7 @@ export default function HomePage() {
       try {
         setLoading(true);
         const data = await getTrendingMovies();
-        setMovies(data.results);
+        setMovies(data);
       } catch (error) {
         setError(true);
       } finally {
