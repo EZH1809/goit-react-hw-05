@@ -1,0 +1,19 @@
+.headerNav {
+
+  display: inline-flex;
+
+  padding: 8px;
+  margin: 8px;
+  text-decoration: none;
+  background-color: #1a2c5b; 
+  color: #fff; 
+}
+
+.headerNav:hover {
+  color: #FF9400;
+}
+.active{
+  background-color: #CECCF4;
+  color: aliceblue;
+}
+

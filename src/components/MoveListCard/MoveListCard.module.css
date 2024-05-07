@@ -1,0 +1,14 @@
+.card {
+  width: 200px;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+.dataRelease {
+  margin-bottom: 8px;
+  text-decoration: none;
+}
