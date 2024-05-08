@@ -16,7 +16,7 @@ export async function getTrendingMovies() {
 export async function searchMovies(query) {
   const url = `https://api.themoviedb.org/3/search/movie?query=${query}`;
   const response = await axios.get(url, options);
-  return response.data.results;
+  return response.data;
 }
 
 export async function getMovieData(movieId) {
