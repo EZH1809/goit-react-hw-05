@@ -23,6 +23,7 @@ export default function MovieSearchForm({ onSearch }) {
               type="text"
               autoComplete="off"
               autoFocus
+              placeholder="Input films"
               className={css.input}
             />
           )}

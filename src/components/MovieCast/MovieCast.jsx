@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCredits } from '../../movies-api';
+import css from '../MovieCast/MovieCast';
 
 export default function MovieCast() {
   const { movieId } = useParams();
@@ -21,10 +22,10 @@ export default function MovieCast() {
   }, [movieId]);
 
   return (
-    <div>
+    <div className={css.castList}>
       {error && <p>Sorry, we have a problem</p>}
       {cast && cast.length > 0 ? (
-        <ul>
+        <ul className={css.castItem}>
           {cast.map(actor => (
             <li key={actor.id}>
               <img

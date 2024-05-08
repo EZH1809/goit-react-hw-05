@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieReviews } from '../../movies-api';
+
 import Loader from '../Loader/Loader';
 
 export default function MovieReviews() {
